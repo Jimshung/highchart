@@ -2,27 +2,38 @@
 <html>
 
 <head>
-
+  <title>Highcharts_IBM by jim51114</title>
   <script type="text/javascript" src="/js/lib/dummy.js"></script>
   <link rel="stylesheet" type="text/css" href="/css/result-light.css">
-
   <style type="text/css">
+    #container {
+      height: 400px
+    }
+
     #reporting {
       position: relative;
-      top: 55px;
+      top: 500px;
       right: 20px;
       font: 12px Arial, Verdana;
       color: #666;
       background: white;
     }
+    /*@media (orientation: portrait) {
+      body {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+    }*/
+
   </style>
-//jim
-  <title>Highcharts_IBM by jim51114</title>
 </head>
 
 <body>
   <script src="https://code.highcharts.com/highcharts.js"></script>
-  <div id="container" style="height: 400px"></div>
+  <div id="container"></div>
   <div id="reporting"></div>
   <script type='text/javascript'>
     Highcharts.chart('container', {
@@ -34,7 +45,7 @@
       },
       xAxis: {
         type: 'datetime',
-         id: 'x-axis'
+        id: 'x-axis'
       },
       tooltip: {
         valueDecimals: 4,
@@ -69,7 +80,7 @@
             enabled: false
           },
           pointIntervalUnit: 'day',
-          pointStart: Date.UTC(2017, 5, 5)
+          pointStart: Date.UTC(2017, 6, 5)
         },
         series: {
           point: {
@@ -91,8 +102,7 @@
                 chart.lbl
                   .show()
                   .attr({
-                    text: 'x: ' + this.x + ', 銀行賣出-即期: ' + this.y
-
+                    text: '銀行賣出-即期: ' + this.y + ' 平均:29.9200  最高:30.2350 最低:29.6400'
                   });
               }
             }
